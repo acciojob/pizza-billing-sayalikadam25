@@ -62,7 +62,7 @@ public class Pizza {
                 bill += "Extra Toppings Added: " + toppingsPrice + '\n';
             if (takeAwayFlag == true)
                 bill += "Paperbag Added: " + takeAwayPrice + '\n';
-            bill += "Total Price: " + price;
+            bill += "Total Price: " + price+'\n';
 
             isBillGenerated=true;
         }
