@@ -8,10 +8,10 @@ public class Pizza {
     private int cheesePrice;
     private int toppingsPrice;
     private int takeAwayPrice;
-    private boolean extraCheeseFlag;
-    private boolean takeAwayFlag;
+    boolean extraCheeseFlag;
+    boolean takeAwayFlag;
     //private boolean extraToppingVegFlag;
-    private boolean extraToppingFlag;
+    boolean extraToppingFlag;
     boolean isBillGenerated=false;
 
     public Pizza(Boolean isVeg){
@@ -42,7 +42,6 @@ public class Pizza {
         if(extraCheeseFlag==false)
             price=price+cheesePrice;
         extraCheeseFlag=true;
-        return;
     }
     public void addExtraToppings(){
         if(extraToppingFlag==false){
@@ -54,14 +53,9 @@ public class Pizza {
         if(takeAwayFlag==false)
             price=price+takeAwayPrice;
         takeAwayFlag=true;
-        return;
     }
     public String getBill(){
         if(isBillGenerated==false) {
-//            if (isVeg)
-//                bill += "Base Price Of The Pizza: 300" + '\n';
-//            if (!isVeg)
-//                bill += "Base Price Of The Pizza: 400" + '\n';
             if (extraCheeseFlag == true)
                 bill += "Extra Cheese Added: " + cheesePrice + '\n';
             if (extraToppingFlag == true)
@@ -72,6 +66,6 @@ public class Pizza {
 
             isBillGenerated=true;
         }
-        return this.bill;
+        return bill;
     }
 }
